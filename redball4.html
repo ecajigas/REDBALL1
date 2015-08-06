@@ -1,6 +1,7 @@
 <html>
 <head>
 <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+<script type='text/javascript' src='http://lrn.icstars.org/redball.js'></script>
 <style>
 #redball {
 position: absolute;
@@ -9,6 +10,59 @@ top: 100px;
 }
 </style>
 <script>
+ function moveup() { 
+		if (redball.top < 0) {
+			alert('Sir!');
+		}
+		else {
+			redball.top = redball.top -80;	
+		}
+	}
+	function movedown()
+	{ if (redball.top > 575)
+	{
+	alert ('Sir!');
+	}
+	else
+	{
+		redball.top = redball.top+80;
+	}
+	}	
+	function moveleft()
+	{ if (redball.left <0) {
+	alert ('Sir!');
+	}
+	else
+	{
+		redball.left = redball.left-80;
+	}	
+	}
+		function moveright() 
+		{ if (redball.left > 1249) {
+		alert ('Sir!');
+	}
+	else
+	{
+		redball.left = redball.left+80;
+	}
+	}
+	function moveupright() {
+		moveright();
+		moveup();
+	}
+	function moveupleft() {
+		moveleft();
+		moveup();
+	}
+	function movedownright() {
+		moveright();
+		movedown();
+	}
+	function movedownleft() {
+		moveleft();
+		movedown();
+	}
+ 
 function fadein() {
 	var elem = $("#redball");
 	elem.fadeIn();
@@ -25,6 +79,22 @@ function fadeout() {
 	var elem = $(".name");
 	elem.css("font-size", "25px");
 	}
+		function moveupright() {
+		moveright();
+		moveup();
+	}
+	function moveupleft() {
+		moveleft();
+		moveup();
+	}
+	function movedownright() {
+		moveright();
+		movedown();
+	}
+	function movedownleft() {
+		moveleft();
+		movedown();
+	}
 </script>	
 </head>
 <body>
@@ -37,6 +107,17 @@ function fadeout() {
 <button onclick="fadeout()">Fading Out</button>
 <button onclick="fontsize()">Font Size</button>
 <button onclick="fontdown()">Font Down</button>
+<button onclick="moveup()">move up</button>
+<button onclick="movedown()">move down</button>
+<button onclick="moveleft()">move left</button>
+<button onclick="moveright()">move right</button>
+<button onclick="moveupright()">move UpRight</button>
+<button onclick="moveupleft()">move UpLeft</button>
+<button onclick="movedownright()">move DownRight</button>
+<button onclick="movedownleft()">move DownLeft</button>
+<button onclick="moveup(); moveright(); movedown(); moveleft();">squares</button>
+<button onclick="moveup(); moveright(); movedown(); moveright(); moveleft(); moveleft();">triangle</button>
+<button onclick="moveup(); moveupright(); moveright(); movedownright(); movedown(); movedownleft(); moveleft(); moveupleft();">octagon</button>
 </div>
 </body>
 </html>
